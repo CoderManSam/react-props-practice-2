@@ -1,7 +1,7 @@
-function Message({ message }) {
+function Message(props) {
   return (
-    <li className={`message ${message.user === 'Nicolas' ? 'mine' : 'other'}`}>
-      {message.text}
+    <li className={`message ${props.message.user === 'Nicolas' ? 'mine' : 'other'}`}>
+      {props.message.text}
     </li>
   )
 }

@@ -1,10 +1,10 @@
 import Message from './Message'
 
-function Chat({ messages, addMessage }) {
+function Chat(props) {
   return (
     <div className="chat">
       <ul>
-        {messages.map( (message, index) => (
+        {props.messages.map( (message, index) => (
           <Message key={index} message={message} />
         ))}
       </ul>
@@ -12,7 +12,7 @@ function Chat({ messages, addMessage }) {
       <form
         onSubmit={e => {
           e.preventDefault()
-          addMessage(e.target.message.value)
+          props.addMessage(e.target.message.value)
           e.target.reset()
         }}
       >
